@@ -21,7 +21,7 @@ angular.module('starter.controllers', [])
   $scope.message = Messages.get($stateParams.messageId);
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('SettingsCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true
   };
