@@ -55,16 +55,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       views: {
         'tab-messages': {
           templateUrl: 'templates/tab-messages.html',
-          controller: 'ChatsCtrl'
+          controller: 'MessagesCtrl'
         }
       }
     })
     .state('tab.message-detail', {
-      url: '/messages/:chatId',
+      url: '/messages/:messageId',
       views: {
         'tab-messages': {
           templateUrl: 'templates/message-detail.html',
-          controller: 'ChatDetailCtrl'
+          controller: 'MessageDetailCtrl'
         }
       }
     })
