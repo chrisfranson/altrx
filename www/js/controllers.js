@@ -25,4 +25,12 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
+})
+
+.controller('GoalsCtrl', function($scope) {
+
+})
+
+.controller('LogsCtrl', function($scope) {
+
 });

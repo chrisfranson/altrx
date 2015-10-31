@@ -5,9 +5,19 @@ navigation history that also transitions its views in and out.
 -->
 <ion-tabs class="tabs-icon-top tabs-color-active-positive">
 
-  <!-- Goals Tab -->
-  <ion-tab title="Goals" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/dash">
+  <!-- Dashboard Tab -->
+  <ion-tab title="Dashboard" icon-off="ion-ionic" icon-on="ion-ionic" href="#/tab/dash">
     <ion-nav-view name="tab-dash"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Goals Tab -->
+  <ion-tab title="Goals" icon-off="ion-trophy" icon-on="ion-trophy" href="#/tab/goals">
+    <ion-nav-view name="tab-goals"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Logs Tab -->
+  <ion-tab title="Logs" icon-off="ion-clipboard" icon-on="ion-clipboard" href="#/tab/logs">
+    <ion-nav-view name="tab-logs"></ion-nav-view>
   </ion-tab>
 
   <!-- Messages Tab -->
