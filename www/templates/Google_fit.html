@@ -9,7 +9,14 @@
 
 $(document).ready(function(){
 	
-	auth_token ='ya29.HgLXf5uNeNKS06cGSDZEcqGf1Y6-SQ6fq0JawQe01Bzs33VgFq2tA1LChP0smWwX8whA';
+	
+	auth_token ='ya29.HgLoApj1m9VLiYF9kxL3jWHsLk4IBWpBUsyliX7RwCOI-ARne7Gmf7lsrG2aLIz72NpL';
+	
+	curr_time = $.now();
+	var d = new Date();
+	d.setHours(0,0,0,0);
+	yesterday_midnight=d.valueOf();
+	
 	/*
 	jQuery.get('token.txt', function(data) {
 		alert(data);
@@ -24,7 +31,7 @@ $(document).ready(function(){
       });
 	*/
 	$.ajax({
-         url: "https://www.googleapis.com/fitness/v1/users/me/dataSources/derived:com.google.step_count.delta:com.google.android.gms:estimated_steps/datasets/1446267601000000000-1446354001000000000",
+         url: "https://www.googleapis.com/fitness/v1/users/me/dataSources/derived:com.google.step_count.delta:com.google.android.gms:estimated_steps/datasets/"+curr_time+"000000-"+yesterday_midnight+"000000",
          type: "GET",
 		 cache: false,
 		 contentType: "application/json",
@@ -38,6 +45,34 @@ $(document).ready(function(){
 				console.log(data.point[i].value[0].intVal);
 				}
 				console.log('Steps'+ total);
+				console.log(data);
+			},
+            
+            401: function (jqXHR, textStatus, errorThrown) {
+                console.log('Auth failed!!!');
+            },
+            
+            403: function() {
+                alert('Sorry, are not authorized');
+            }
+        }
+      });
+	  
+	  $.ajax({
+         url: "https://www.googleapis.com/fitness/v1/users/me/dataSources/derived:com.google.distance.delta:com.google.android.gms:pruned_distance/datasets/" +curr_time+"000000-"+yesterday_midnight+"000000",
+         type: "GET",
+		 cache: false,
+		 contentType: "application/json",
+         beforeSend: function(xhr){xhr.setRequestHeader('Authorization', ' Bearer ' + auth_token );},//ya29.HQKUE56-G68Ds9j9hRS4WBs3PglILr8IDw37XrQXPA3OOfT_jPgJxb6B4nByRGgXQgXX');},
+         statusCode: {
+            200: function(data) { 
+				// var obj = jQuery.parseJSON(data);
+				total =0;
+				for (var i in data.point) {
+				total+=data.point[i].value[0].fpVal;
+				console.log(data.point[i].value[0].fpVal);
+				}
+				console.log('distance'+ total);
 				console.log(data);
 			},
             
