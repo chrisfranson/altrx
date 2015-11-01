@@ -32,6 +32,11 @@
 	color: orange;
 }
 
+.my-saving-goal {
+	font-weight: bold;
+	color: green;
+}
+
 .goal-name {
 	color: #117;
 }
