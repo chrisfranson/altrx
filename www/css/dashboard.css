@@ -1,0 +1,20 @@
+
+.progress.steps {
+	background-color: #48f;
+	width: 80%;
+}
+
+.progress.miles {
+	background-color: #48f;
+	width: 70%;
+}
+
+.progress.weight {
+	background-color: #f84;
+	width: 20%;
+}
+
+.progress.blood-sugar {
+	width: 60%;
+}
+
