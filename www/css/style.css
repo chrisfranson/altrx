@@ -1,1 +1,37 @@
 /* Empty. Add your own CSS if you like */
+
+#goals-trophy {
+    position: relative;
+    height: 100px; 
+}
+
+#big-trophy {
+	font-size: 100px;
+	line-height: 1em;
+	font-family: "Ionicons";
+	text-align: center;
+	color: #117;
+}
+
+#goals-text {
+    position: absolute;
+    top: 18px;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    font-family: 'Berkshire Swash', cursive, sans-serif;
+}
+
+.my-goal-col {
+	text-align: center;
+}
+
+.my-goal {
+	font-weight: bold;
+	color: orange;
+}
+
+.goal-name {
+	color: #117;
+}
