@@ -1,0 +1,59 @@
+<html>
+<head>
+
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+//alert("begin");
+
+$(document).ready(function(){
+	
+	auth_token ='ya29.HgLXf5uNeNKS06cGSDZEcqGf1Y6-SQ6fq0JawQe01Bzs33VgFq2tA1LChP0smWwX8whA';
+	/*
+	jQuery.get('token.txt', function(data) {
+		alert(data);
+	});
+	
+	$.ajax({
+         url: "token.txt",
+         type: "GET",
+		 cache: false,
+         sucess: function(data){
+		 alert(data);}
+      });
+	*/
+	$.ajax({
+         url: "https://www.googleapis.com/fitness/v1/users/me/dataSources/derived:com.google.step_count.delta:com.google.android.gms:estimated_steps/datasets/1446267601000000000-1446354001000000000",
+         type: "GET",
+		 cache: false,
+		 contentType: "application/json",
+         beforeSend: function(xhr){xhr.setRequestHeader('Authorization', ' Bearer ' + auth_token );},//ya29.HQKUE56-G68Ds9j9hRS4WBs3PglILr8IDw37XrQXPA3OOfT_jPgJxb6B4nByRGgXQgXX');},
+         statusCode: {
+            200: function(data) { 
+				// var obj = jQuery.parseJSON(data);
+				total =0;
+				for (var i in data.point) {
+				total+=data.point[i].value[0].intVal;
+				console.log(data.point[i].value[0].intVal);
+				}
+				console.log('Steps'+ total);
+				console.log(data);
+			},
+            
+            401: function (jqXHR, textStatus, errorThrown) {
+                console.log('Auth failed!!!');
+            },
+            
+            403: function() {
+                alert('Sorry, are not authorized');
+            }
+        }
+      });
+	 
+});
+
+
+</script>
+</body>
+</html>
