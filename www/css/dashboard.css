@@ -18,3 +18,12 @@
 	width: 60%;
 }
 
+.progress.steps-goal {
+	background-color: #48f;
+	width: 100%;
+}
+
+.progress.cals-goal {
+	background-color: #f84;
+	width: 50%;
+}
