@@ -6,9 +6,16 @@
 -->
 <ion-view view-title="{{message.name}}">
   <ion-content class="padding">
-    <img ng-src="{{message.face}}" style="width: 64px; height: 64px">
-    <p>
-      {{message.lastText}}
-    </p>
+    <div class="messages-wrapper">
+
+
+      <div class="message-container" ng-repeat="entry in message.history">
+        <div class="message {{ entry.mclass }}">
+          {{ entry.message}}
+        </div>
+      </div>
+
+
+    </div>
   </ion-content>
 </ion-view>

@@ -1,0 +1,31 @@
+
+@import "http://fonts.googleapis.com/css?family=Open+Sans:400,600,700";
+* {
+    box-sizing: border-box;
+}
+
+.messages-wrapper {
+  padding-top: 10px;
+  position: relative;
+  border-top: 0 none;
+}
+.message {
+    border-radius: 20px 20px 20px 20px;
+    margin: 0 15px 10px;
+    padding: 15px 20px;
+    position: relative;
+}
+.message.to {
+    background-color: #2095FE;
+    color: #fff;
+    margin-left: 80px;
+}
+.message.from {
+    background-color: #E5E4E9;
+    color: #363636;
+    margin-right: 80px;
+}
+.message.to + .message.to,
+.message.from + .message.from {
+  margin-top: -7px;
+}
